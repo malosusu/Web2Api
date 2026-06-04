@@ -525,7 +525,10 @@ export async function generateImages(model = "65a232c082ff90a2ad2f15e2", prompt:
       }
     );
     const contentType = response.headers.get("content-type") || "";
-    if (!contentType.includes("text/event-stream")) throw new Error(`Stream response Content-Type invalid: ${contentType}`);
+    if (!contentType.includes("text/event-stream")) {
+      const errBody = await response.text();
+      throw new Error(`Stream response Content-Type invalid: ${contentType} — ${errBody.slice(0, 500)}`);
+    }
     const { convId, imageUrls } = await receiveImages(response.body!);
     removeConversation(convId, refreshToken, model).catch(() => {});
     if (imageUrls.length == 0) throw new Error("图像生成失败");
