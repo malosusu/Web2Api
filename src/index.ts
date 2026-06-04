@@ -2254,6 +2254,7 @@ function renderHomeHtml(): string {
 export interface Env extends KimiEnv {
   SIGN_SECRET?: string;
   API_KEYS?: string;
+  GLM_REFRESH_TOKEN?: string;
   GEMINI_COOKIE?: string;
   SAPISID?: string;
   GEMINI_BL?: string;
@@ -2407,6 +2408,7 @@ async function requestGuestRefreshToken(env: Env): Promise<{ refreshToken: strin
 }
 
 async function authenticate(env: Env): Promise<string> {
+  if (env.GLM_REFRESH_TOKEN) return env.GLM_REFRESH_TOKEN;
   const guest = await requestGuestRefreshToken(env);
   return guest.refreshToken;
 }
