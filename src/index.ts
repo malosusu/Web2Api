@@ -291,31 +291,6 @@ function renderHomeHtml(): string {
     display: none;
   }
 
-  .github-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    min-height: 38px;
-    border: 0;
-    background: transparent;
-    color: var(--text);
-    font-size: 13px;
-    font-weight: 760;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .github-link:hover {
-    color: var(--accent-strong);
-  }
-
-  .github-link svg {
-    flex: 0 0 auto;
-    width: 20px;
-    height: 20px;
-  }
-
   .model-tools {
     display: grid;
     gap: 12px;
@@ -1184,12 +1159,6 @@ function renderHomeHtml(): string {
       display: inline-flex;
     }
 
-    .github-link {
-      margin-left: auto;
-      min-height: 34px;
-      font-size: 12px;
-    }
-
     .model-tools {
       gap: 9px;
       padding: 10px 12px;
@@ -1395,12 +1364,7 @@ function renderHomeHtml(): string {
     <header class="brand">
       <button class="brand-action" id="docsButton" type="button">API 文档</button>
       <button class="brand-action model-toggle" id="modelToggle" type="button" aria-expanded="false">模型</button>
-      <a class="github-link" href="https://github.com/fish2018" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor" d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1.01.07 1.54 1.06 1.54 1.06.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.33 9.33 0 0 1 12 6.96c.85 0 1.7.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.17 10.17 0 0 0 22 12.25C22 6.59 17.52 2 12 2Z"/>
-        </svg>
-        <span>fish2018</span>
-      </a>
+      <span class="brand-title">UniAPI</span>
     </header>
     <section class="model-tools">
       <input class="search" id="modelSearch" type="search" placeholder="搜索模型" autocomplete="off">
