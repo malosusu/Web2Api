@@ -1,0 +1,10 @@
+name = "uniapi-worker"
+main = "src/index.ts"
+compatibility_date = "2024-05-12"
+
+[vars]
+SIGN_SECRET = "8a1317a7468aa3ad86e997d08f3f31cb"
+
+[[kv_namespaces]]
+binding = "KIMI_KV"
+id = "a2e3d526d3474066a18a6fc9d0882f57"

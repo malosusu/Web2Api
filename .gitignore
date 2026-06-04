@@ -1,0 +1,5 @@
+node_modules/
+.wrangler/
+__MACOSX/
+.DS_Store
+package-lock.json
